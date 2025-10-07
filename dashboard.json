@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "totalProblems": 1,
+    "lastUpdated": "2025-10-07T18:56:03.834Z",
+    "breakdown": {
+      "Codechef": {
+        "total": 0,
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      },
+      "Gfg": {
+        "total": 1,
+        "Easy": 0,
+        "Medium": 1,
+        "Hard": 0
+      },
+      "Leetcode": {
+        "total": 0,
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      },
+      "Hackerrank": {
+        "total": 0,
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      }
+    }
+  },
+  "problems": [
+    {
+      "id": "gfg-medium-indexes-of-subarray-sum",
+      "platform": "Gfg",
+      "difficulty": "Medium",
+      "problemName": "Indexes of Subarray Sum",
+      "language": "cpp",
+      "files": {
+        "code": "class Solution {\r\n  public:\r\n    vector<int> subarraySum(vector<int> &arr, int target) {\r\n        int n = arr.size();\r\n        int start = 0;\r\n        long long sum = 0; // use long long to avoid overflow\r\n\r\n        for (int end = 0; end < n; end++) {\r\n            sum += arr[end];\r\n\r\n            // shrink the window if sum exceeds target\r\n            while (sum > target && start <= end) {\r\n                sum -= arr[start];\r\n                start++;\r\n            }\r\n\r\n            // check if sum matches\r\n            if (sum == target) {\r\n                return {start + 1, end + 1}; // 1-based indices\r\n            }\r\n        }\r\n        return {-1}; // if no subarray found\r\n    }\r\n};",
+        "readme": "Algorithms,Arrays,Data_Structuresprefix-sum,Searchingsliding-window\n\nIndexes of Subarray Sum\nDifficulty: MediumAccuracy: 16.5%Submissions: 1.8MPoints: 4Average Time: 20m\n\nGiven an array arr[] containing only non-negative integers, your task is to find a continuous subarray (a contiguous sequence of elements) whose sum equals a specified value target. You need to return the 1-based indices of the leftmost and rightmost elements of this subarray. You need to find the first subarray whose sum is equal to the target.\n\nNote: If no such array is possible then, return [-1].\n\nExamples:\n\nInput: arr[] = [1, 2, 3, 7, 5], target = 12\nOutput: [2, 4]\nExplanation: The sum of elements from 2nd to 4th position is 12.\nInput: arr[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], target = 15\nOutput: [1, 5]\nExplanation: The sum of elements from 1st to 5th position is 15.\n\nInput: arr[] = [5, 3, 4], target = 2\nOutput: [-1]\nExplanation: There is no subarray with sum 2.\n\nConstraints:\n1 <= arr.size()<= 106\n0 <= arr[i] <= 103\n0 <= target <= 109\n\nTry more examples\nExpected Complexities\nCompany Tags\nTopic Tags\nRelated Interview Experiences\nRelated Articles",
+        "notes": ""
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": false,
+      "lastUpdated": "2025-10-07T18:55:48.000Z"
+    }
+  ]
+}
