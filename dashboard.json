@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "totalProblems": 1,
-    "lastUpdated": "2025-10-07T18:56:03.834Z",
+    "totalProblems": 2,
+    "lastUpdated": "2025-10-07T18:57:10.181Z",
     "breakdown": {
       "Codechef": {
         "total": 0,
@@ -22,9 +22,9 @@
         "Hard": 0
       },
       "Hackerrank": {
-        "total": 0,
+        "total": 1,
         "Easy": 0,
-        "Medium": 0,
+        "Medium": 1,
         "Hard": 0
       }
     }
@@ -45,6 +45,22 @@
       "hasReadme": true,
       "hasNotes": false,
       "lastUpdated": "2025-10-07T18:55:48.000Z"
+    },
+    {
+      "id": "hackerrank-medium-arrays---ds",
+      "platform": "Hackerrank",
+      "difficulty": "Medium",
+      "problemName": "Arrays - DS",
+      "language": "cpp",
+      "files": {
+        "code": "#include <bits/stdc++.h>\n\nusing namespace std;\n\nstring ltrim(const string &);\nstring rtrim(const string &);\nvector<string> split(const string &);\n\n/*\n * Complete the 'reverseArray' function below.\n *\n * The function is expected to return an INTEGER_ARRAY.\n * The function accepts INTEGER_ARRAY a as parameter.\n */\n\nvector<int> reverseArray(vector<int> a) {\n    reverse(a.begin(), a.end());  // use STL reverse\n    return a;\n}\n\nint main()\n{\n    ofstream fout(getenv(\"OUTPUT_PATH\"));\n\n    string arr_count_temp;\n    getline(cin, arr_count_temp);\n\n    int arr_count = stoi(ltrim(rtrim(arr_count_temp)));\n\n    string arr_temp_temp;\n    getline(cin, arr_temp_temp);\n\n    vector<string> arr_temp = split(rtrim(arr_temp_temp));\n\n    vector<int> arr(arr_count);\n\n    for (int i = 0; i < arr_count; i++) {\n        int arr_item = stoi(arr_temp[i]);\n\n        arr[i] = arr_item;\n    }\n\n    vector<int> res = reverseArray(arr);\n\n    for (size_t i = 0; i < res.size(); i++) {\n        fout << res[i];\n\n        if (i != res.size() - 1) {\n            fout << \" \";\n        }\n    }\n\n    fout << \"\\n\";\n\n    fout.close();\n\n    return 0;\n}\n\nstring ltrim(const string &str) {\n    string s(str);\n\n    s.erase(\n        s.begin(),\n        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))\n    );\n\n    return s;\n}\n\nstring rtrim(const string &str) {\n    string s(str);\n\n    s.erase(\n        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),\n        s.end()\n    );\n\n    return s;\n}\n\nvector<string> split(const string &str) {\n    vector<string> tokens;\n\n    string::size_type start = 0;\n    string::size_type end = 0;\n\n    while ((end = str.find(\" \", start)) != string::npos) {\n        tokens.push_back(str.substr(start, end - start));\n\n        start = end + 1;\n    }\n\n    tokens.push_back(str.substr(start));\n\n    return tokens;\n}",
+        "readme": "null\n\nAn array is a data structure that stores elements of the same type in a contiguous block of memory. In an array, , of size , each memory location has some unique index,  (where ), that can be referenced as  or .\n\nYour task is to reverse an array of integers.\n\nNote: If you've already solved our C++ domain's Arrays Introduction challenge, you may want to skip this.\n\nExample\n\n\nReturn .\n\nFunction Description\n\nComplete the function  with the following parameter(s):\n\n: the array to reverse\n\nReturns\n\n: the reversed array\n\nInput Format\n\nThe first line contains an integer, , the number of integers in .\nThe second line contains  space-separated integers that make up .\n\nConstraints",
+        "notes": ""
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": false,
+      "lastUpdated": "2025-10-07T18:56:56.000Z"
     }
   ]
 }
