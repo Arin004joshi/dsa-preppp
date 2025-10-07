@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "totalProblems": 2,
-    "lastUpdated": "2025-10-07T18:57:10.181Z",
+    "totalProblems": 3,
+    "lastUpdated": "2025-10-07T19:00:11.287Z",
     "breakdown": {
       "Codechef": {
         "total": 0,
@@ -16,8 +16,8 @@
         "Hard": 0
       },
       "Leetcode": {
-        "total": 0,
-        "Easy": 0,
+        "total": 1,
+        "Easy": 1,
         "Medium": 0,
         "Hard": 0
       },
@@ -61,6 +61,22 @@
       "hasReadme": true,
       "hasNotes": false,
       "lastUpdated": "2025-10-07T18:56:56.000Z"
+    },
+    {
+      "id": "leetcode-easy-two-sum",
+      "platform": "Leetcode",
+      "difficulty": "Easy",
+      "problemName": "Two Sum",
+      "language": "java",
+      "files": {
+        "code": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n         Map<Integer, Integer> mp = new HashMap<>();\n\n        for (int i = 0; i < nums.length; i++) {\n            mp.put(nums[i], i );\n        }\n        //mycode\n        int[] res = new int[2];\n\n        for (int i = 0; i < nums.length; i++) {\n            \n            int later = target - nums[i];\n            if (mp.containsKey(later) && mp.get(later) != i) {\n                res = new int[]{i, mp.get(later)};\n                break;\n            }\n        }\n\n        return res;\n    }\n}",
+        "readme": "ArrayHashTable\n\nAmazonAdobeGoogleAppleMicrosoftGiven an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n \nExample 1:\n\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n\n\nExample 2:\n\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\n\nExample 3:\n\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n\n \nConstraints:\n\n\n\t2 <= nums.length <= 104\n\t-109 <= nums[i] <= 109\n\t-109 <= target <= 109\n\tOnly one valid answer exists.\n\n\n \nFollow-up: Can you come up with an algorithm that is less than O(n2) time complexity?",
+        "notes": ""
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": false,
+      "lastUpdated": "2025-10-07T18:59:56.000Z"
     }
   ]
 }
