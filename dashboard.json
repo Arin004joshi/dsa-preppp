@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "totalProblems": 6,
-    "lastUpdated": "2025-10-25T09:21:51.316Z",
+    "totalProblems": 7,
+    "lastUpdated": "2025-10-25T09:24:25.217Z",
     "breakdown": {
       "Codechef": {
         "total": 0,
@@ -10,9 +10,9 @@
         "Hard": 0
       },
       "Gfg": {
-        "total": 1,
+        "total": 2,
         "Easy": 0,
-        "Medium": 1,
+        "Medium": 2,
         "Hard": 0
       },
       "Leetcode": {
@@ -45,6 +45,22 @@
       "hasReadme": true,
       "hasNotes": false,
       "lastUpdated": "2025-10-07T18:55:48.000Z"
+    },
+    {
+      "id": "gfg-medium-kadane-s-algorithm",
+      "platform": "Gfg",
+      "difficulty": "Medium",
+      "problemName": "Kadane's Algorithm",
+      "language": "cpp",
+      "files": {
+        "code": "class Solution {\r\npublic:\r\n    int maxSubarraySum(vector<int> &arr) {\r\n        int maxSoFar = arr[0];   // overall max sum\r\n        int currentSum = arr[0]; // current subarray sum\r\n        \r\n        for (int i = 1; i < arr.size(); i++) {\r\n            // Either extend the current subarray or start a new one from arr[i]\r\n            currentSum = max(arr[i], currentSum + arr[i]);\r\n            \r\n            // Update global maximum\r\n            maxSoFar = max(maxSoFar, currentSum);\r\n        }\r\n        \r\n        return maxSoFar;\r\n    }\r\n};",
+        "readme": "Arrays,Dynamic_Programming,Data_Structures,Algorithms\n\nKadane's Algorithm\nDifficulty: MediumAccuracy: 36.28%Submissions: 1.2MPoints: 4Average Time: 20m\n\nYou are given an integer array arr[]. You need to find the maximum sum of a subarray (containing at least one element) in the array arr[].\n\nNote : A subarray is a continuous part of an array.\n\nExamples:\n\nInput: arr[] = [2, 3, -8, 7, -1, 2, 3]\nOutput: 11\nExplanation: The subarray [7, -1, 2, 3] has the largest sum 11.\n\nInput: arr[] = [-2, -4]\nOutput: -2\nExplanation: The subarray [-2] has the largest sum -2.\nInput: arr[] = [5, 4, 1, 7, 8]\nOutput: 25\nExplanation: The subarray [5, 4, 1, 7, 8] has the largest sum 25.\n\nConstraints:\n1 ≤ arr.size() ≤ 105\n-104 ≤ arr[i] ≤ 104\n\nTry more examples\nExpected Complexities\nCompany Tags\nTopic Tags\nRelated Interview Experiences\nRelated Articles",
+        "notes": ""
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": false,
+      "lastUpdated": "2025-10-25T09:23:54.000Z"
     },
     {
       "id": "hackerrank-medium-arrays---ds",
