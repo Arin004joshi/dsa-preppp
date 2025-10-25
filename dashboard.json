@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "totalProblems": 8,
-    "lastUpdated": "2025-10-25T09:27:58.805Z",
+    "totalProblems": 9,
+    "lastUpdated": "2025-10-25T09:29:57.398Z",
     "breakdown": {
       "Codechef": {
-        "total": 0,
-        "Easy": 0,
+        "total": 1,
+        "Easy": 1,
         "Medium": 0,
         "Hard": 0
       },
@@ -30,6 +30,22 @@
     }
   },
   "problems": [
+    {
+      "id": "codechef-easy-remove-duplicates-from-sorted-list",
+      "platform": "Codechef",
+      "difficulty": "Easy",
+      "problemName": "Remove Duplicates from Sorted List",
+      "language": "cpp",
+      "files": {
+        "code": "class Solution {\r\n  public:\r\n    Node* removeDuplicates(Node* head) {\r\n        if (!head) return head;\r\n        \r\n        Node* curr = head;\r\n        \r\n        while (curr != NULL && curr->next != NULL) {\r\n            if (curr->data == curr->next->data) {\r\n                // skip the duplicate node\r\n                Node* temp = curr->next;\r\n                curr->next = curr->next->next;\r\n                delete temp; // free memory\r\n            } else {\r\n                curr = curr->next; // move forward only if no duplicate\r\n            }\r\n        }\r\n        \r\n        return head;\r\n    }\r\n};",
+        "readme": "linked-lists\n\nRemove Duplicates from Sorted List\n\nYou are given head of the non-empty sorted linked list where the value of the \n𝑖\n𝑡\nℎ\ni\nth\n node will be \n𝐴\n𝑖\nA\ni\n\t​\n\n.\n\nYour task is to delete all duplicates such that each element appears only once and return the linked list sorted.\n\nInput:\nFirst line will contain \n𝑇\nT, number of test cases. Then the test cases follow.\nThe first line contains one integer \n𝑁\nN — the length of the linked list.\nThe second line contains \n𝑁\nN space separated integers \n𝐴\n1\n,\n𝐴\n2\n,\n…\n𝐴\n𝑁\nA\n1\n\t​\n\n,A\n2\n\t​\n\n,…A\nN\n\t​\n\n — the value of the linked list nodes starting from the head for the linked list.\n\nNote:\n\nFor Java language, you need to:\n\nComplete the function in the submit solution tab:\n\nNode removeDuplicates(Node head){...}\n\n\n \n \n\nFor C++ language, you need to:\n\nComplete the function in the submit solution tab:\n\nNode* removeDuplicates(Node* head){...}\n\n\n \n \n\nFor Python language, you need to:\n\nComplete the function in the submit solution tab:\n\ndef Node removeDuplicates(self, head):\n\nOutput:\n\nThe function you complete should return the required answer.\n\nConstraints\n1\n≤\n𝑇\n≤\n10\n1≤T≤10\n1\n≤\n𝑁\n,\n𝐴\n𝑖\n≤\n10\n5\n1≤N,A\ni\n\t​\n\n≤10\n5\nSample 1:\nInput\nOutput\n3\n5\n1 1 6 8 8\n5\n1 2 3 4 5\n4\n5 5 5 5\n1 6 8 \n1 2 3 4 5 \n5 \nExplanation:\n\nTest case \n1\n1: We will remove duplicate entry of \n1\n1, \n8\n8. So the sorted linked list will be \n1\n→\n6\n→\n8\n1→6→8.\n\nTest case \n2\n2: There is no duplicate entry. So the sorted linked list will be \n1\n→\n2\n→\n3\n→\n4\n→\n5\n1→2→3→4→5.\n\nTest case \n3\n3: We will remove duplicate entry of \n5\n5. So the sorted linked list will be \n5\n5.",
+        "notes": ""
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": false,
+      "lastUpdated": "2025-10-25T09:29:44.000Z"
+    },
     {
       "id": "gfg-medium-indexes-of-subarray-sum",
       "platform": "Gfg",
