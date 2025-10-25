@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "totalProblems": 7,
-    "lastUpdated": "2025-10-25T09:24:25.217Z",
+    "totalProblems": 8,
+    "lastUpdated": "2025-10-25T09:25:48.019Z",
     "breakdown": {
       "Codechef": {
         "total": 0,
@@ -22,9 +22,9 @@
         "Hard": 0
       },
       "Hackerrank": {
-        "total": 1,
+        "total": 2,
         "Easy": 0,
-        "Medium": 1,
+        "Medium": 2,
         "Hard": 0
       }
     }
@@ -77,6 +77,22 @@
       "hasReadme": true,
       "hasNotes": false,
       "lastUpdated": "2025-10-07T18:56:56.000Z"
+    },
+    {
+      "id": "hackerrank-medium-insert-a-node-at-the-head-of-a-linked-list",
+      "platform": "Hackerrank",
+      "difficulty": "Medium",
+      "problemName": "Insert a node at the head of a linked list",
+      "language": "cpp",
+      "files": {
+        "code": "#include <bits/stdc++.h>\n\nusing namespace std;\n\nclass SinglyLinkedListNode {\n    public:\n        int data;\n        SinglyLinkedListNode *next;\n\n        SinglyLinkedListNode(int node_data) {\n            this->data = node_data;\n            this->next = nullptr;\n        }\n};\n\nclass SinglyLinkedList {\n    public:\n        SinglyLinkedListNode *head;\n        SinglyLinkedListNode *tail;\n\n        SinglyLinkedList() {\n            this->head = nullptr;\n            this->tail = nullptr;\n        }\n\n};\n\nvoid print_singly_linked_list(SinglyLinkedListNode* node, string sep, ofstream& fout) {\n    while (node) {\n        fout << node->data;\n\n        node = node->next;\n\n        if (node) {\n            fout << sep;\n        }\n    }\n}\n\nvoid free_singly_linked_list(SinglyLinkedListNode* node) {\n    while (node) {\n        SinglyLinkedListNode* temp = node;\n        node = node->next;\n\n        free(temp);\n    }\n}\n\n// Complete the insertNodeAtHead function below.\n\n/*\n * For your reference:\n *\n * SinglyLinkedListNode {\n *     int data;\n *     SinglyLinkedListNode* next;\n * };\n *\n */\nSinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int data) {\n    // Step 1: Create a new node\n    SinglyLinkedListNode* newNode = new SinglyLinkedListNode(data);\n    \n    // Step 2: Point the new node's next to the current head\n    newNode->next = llist;\n    \n    // Step 3: Return the new node as the new head\n    return newNode;\n}\n\n\nint main()\n{\n    ofstream fout(getenv(\"OUTPUT_PATH\"));\n\n    SinglyLinkedList* llist = new SinglyLinkedList();\n\n    int llist_count;\n    cin >> llist_count;\n    cin.ignore(numeric_limits<streamsize>::max(), '\\n');\n\n    for (int i = 0; i < llist_count; i++) {\n        int llist_item;\n        cin >> llist_item;\n        cin.ignore(numeric_limits<streamsize>::max(), '\\n');\n    \n      \tSinglyLinkedListNode* llist_head = insertNodeAtHead(llist->head, llist_item);\n        llist->head = llist_head;\n    }\n\n    print_singly_linked_list(llist->head, \"\\n\", fout);\n    fout << \"\\n\";\n\n    free_singly_linked_list(llist->head);\n\n    fout.close();\n\n    return 0;\n}",
+        "readme": "null\n\nThis challenge is part of a tutorial track by MyCodeSchool and is accompanied by a video lesson.\n\nGiven a pointer to the head of a linked list, insert a new node before the head. The  value in the new node should point to  and the  value should be replaced with a given value. Return a reference to the new head of the list. The head pointer given may be null meaning that the initial list is empty.\n\nFunction Description\n\nComplete the function  with the following parameter(s):\n\n: a reference to the head of a list\n: the value to insert in the  field of the new node\n\nInput Format\n\nThe first line contains an integer , the number of elements to be inserted at the head of the list.\nThe next  lines contain an integer each, the elements to be inserted, one per function call.\n\nConstraints\n\nSample Input\n\nSTDIN   Function\n-----   --------\n5       n = 5\n383     data items to insert 383 ... 321\n484\n392\n975\n321\n\n\nSample Output\n\n321\n975\n392\n484\n383\n\n\nExplanation\n\nIntially the list in NULL. After inserting 383, the list is 383 -> NULL.\nAfter inserting 484, the list is 484 -> 383 -> NULL.\nAfter inserting 392, the list is 392 -> 484 -> 383 -> NULL.\nAfter inserting 975, the list is 975 -> 392 -> 484 -> 383 -> NULL.\nAfter inserting 321, the list is 321 -> 975 -> 392 -> 484 -> 383 -> NULL.",
+        "notes": ""
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": false,
+      "lastUpdated": "2025-10-25T09:25:34.000Z"
     },
     {
       "id": "leetcode-easy-palindrome-number",
